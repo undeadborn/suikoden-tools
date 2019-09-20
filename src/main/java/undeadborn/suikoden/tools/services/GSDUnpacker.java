@@ -39,28 +39,28 @@ public class GSDUnpacker {
         String outputFolder = workingFolder + "\\" + fileInput.getName() + EXTRACT_SUFFIX;
 
         try (DataInputStream dis = new DataInputStream(new BufferedInputStream(new FileInputStream(fileInput.getAbsolutePath())))) {
-            // these bytes are common in GSD files, but no idea what is about (could contain file signature? it starts with a GSD2 ...)
+            // these bytes are common in GSD files, but no idea what is about (could be file signature? it starts with a GSD2 ...)
             dis.skipBytes(8);
-            // no idea of what is this, could be the CRC of the entire file?
-            dis.skipBytes(4);
+            // these bytes are the full size of the file, it needs to be read in reverse
+            int gsdFileSize = ByteBuffer.wrap(getBytes(dis, 4, true)).getInt();
             // these bytes are common in GSD files, but no idea what is about
             dis.skipBytes(4);
             // these bytes are common in GSD files, but no idea what is about
             dis.skipBytes(4);
-            // these are the number of files that GSD file contains, they need to be read in reverse
+            // these are the number of files that GSD file contains, it needs to be read in reverse
             int totalFiles = ByteBuffer.wrap(getBytes(dis, 4, true)).getInt();
             // these bytes are common in GSD files, but no idea what is about
             dis.skipBytes(8);
-            // seems header finishes here so, ignore all remaining zeros until we found the first byte
+            // seems header finishes here so, ignore all remaining zeros until we found the first byte > than zero
             skipZeros(dis);
 
-            System.out.println(String.format("This BIN file contains %s files", totalFiles));
+            System.out.println(String.format("This BIN file has a size of [%s] and contains [%s] files", gsdFileSize, totalFiles));
             System.out.println("--------------------------------------------------------------------");
 
             // after this seems we have the list of files that GSD contains
             // every set of byte contains information from the file (id, offset, length... etc)
             while (dis.available() > 0 && totalFiles > binFiles.size()) {
-                // this is the ID or the order of the file
+                // this is the ID of the file
                 int id = ByteBuffer.wrap(getBytes(dis, 4, true)).getInt();
                 // this is the offset of the file (where it begins)
                 int off = ByteBuffer.wrap(getBytes(dis, 4, true)).getInt();
@@ -101,7 +101,7 @@ public class GSDUnpacker {
         }
 
         // reopen file in RandomAccessFile to seek for offsets
-        try (RandomAccessFile raf = new RandomAccessFile(fileInput.getAbsolutePath(), "r");) {
+        try (RandomAccessFile raf = new RandomAccessFile(fileInput.getAbsolutePath(), "r")) {
             for (int i = 0; i < binFiles.size(); i++) {
                 System.out.println(String.format("Extracting file [%s] ...", binFiles.get(i).getName()));
                 try {
@@ -109,7 +109,7 @@ public class GSDUnpacker {
                     byte[] arrayBytes = new byte[binFiles.get(i).getLength()];
                     raf.seek(Integer.valueOf(binFiles.get(i).getOffset()).longValue());
                     raf.read(arrayBytes, 0, binFiles.get(i).getLength());
-                    // get the file extension of the file using the file signature
+                    // get the file extension using the file signature
                     String fileExtension = getFileExtension(arrayBytes);
                     // create the file
                     try (FileOutputStream fos = new FileOutputStream(outputFolder + "\\" + binFiles.get(i).getName() + "." + fileExtension)) {
@@ -123,13 +123,17 @@ public class GSDUnpacker {
             }
         }
 
+        // TODO
+        // some files as well contain other GZ files, however I didn't find any header informing about their offsets or how many they are
+        // so, we would need to check for GZ file signatures inside those files to extract them or keep investigating bytes to find patterns
+
         // return any errors found
         if (binFiles.stream().anyMatch(file -> file.getErrors().size() > 0)) {
             System.err.println("\nErrors found in some files");
             binFiles.stream().filter(file -> file.getErrors().size() > 0).forEach(file -> {
                 System.err.println("------------------------------------------------------------------");
                 System.err.println(String.format("Errors found in file [%s]", file.getName()));
-                file.getErrors().stream().forEach(System.err::println);
+                file.getErrors().forEach(System.err::println);
             });
         } else {
             System.out.println("\nAll files extracted successfully !!");
@@ -142,8 +146,8 @@ public class GSDUnpacker {
      * Get bytes from DataInputStream
      *
      * @param dis The DataInputStream
-     * @param len The quantity of bytes
-     * @return
+     * @param len The quantity of bytes to get
+     * @return The resulting set of bytes
      * @throws IOException
      */
     private byte[] getBytes(DataInputStream dis, int len) throws IOException {
@@ -155,8 +159,8 @@ public class GSDUnpacker {
      *
      * @param dis     The DataInputStream
      * @param len     The quantity of bytes
-     * @param reverse true to receive the bytes reversed
-     * @return
+     * @param reverse true to receive bytes reversed
+     * @return The resulting set of bytes
      * @throws IOException
      */
     private byte[] getBytes(DataInputStream dis, int len, boolean reverse) throws IOException {
@@ -187,7 +191,7 @@ public class GSDUnpacker {
      * Get the file extension using the file signature (the first bytes of the file)
      *
      * @param arrayBytes The array bytes of file
-     * @return
+     * @return The file extension
      * @throws Exception
      */
     private String getFileExtension(byte[] arrayBytes) throws Exception {
