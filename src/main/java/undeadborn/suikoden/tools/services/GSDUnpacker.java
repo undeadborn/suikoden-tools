@@ -127,6 +127,9 @@ public class GSDUnpacker {
         // some files as well contain other GZ files, however I didn't find any header informing about their offsets or how many they are
         // so, we would need to check for GZ file signatures inside those files to extract them or keep investigating bytes to find patterns
 
+        // first 4 bytes are the filesize
+
+
         // return any errors found
         if (binFiles.stream().anyMatch(file -> file.getErrors().size() > 0)) {
             System.err.println("\nErrors found in some files");
