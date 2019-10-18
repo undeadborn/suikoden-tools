@@ -26,3 +26,8 @@ Check source code to know more information about them.
 **GSDUnpacker**
 
 This class is used to unpack the GSD files found in the game. GSD file seems like a custom package that contains binaries. Inside GSD header we found the list of files and information from them. Seems those files are compressed in GZ format.
+
+# Pending work
+* Identify all Japanese texts inside the uncompressed files. Seems chars are in "Unicode UTF-16 LE" encoding. Most of the texts are at the very end of the files.
+* Identify the required changes needed to be able to insert latin characters.
+* Create a GSDPacker to repack all modified files. Need to investigate the pending unknown bytes from GSD files, to be able to create a valid GSD file.
