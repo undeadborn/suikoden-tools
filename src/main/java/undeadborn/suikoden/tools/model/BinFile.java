@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BinFile {
+
     private String name;
     private int id;
     private int offset;

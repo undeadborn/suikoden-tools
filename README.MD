@@ -1,33 +1,31 @@
 # Genso Suikoden I & II PSP Tools
-
-I've created this project to share my investigations on the reverse engineering of this game.
-
-This game is only on Japanese, so, wanted to start analysing the binaries and trying to extract any information of the game, to be able to start with a translation patch.
-
-This is an ongoing work that will need time, but it's an start.
-
-Feel free to contribute and help with the cause.
-
-I use the ISO file of the game for the work
+Reverse engineering tools for Genso Suikoden I & II PSP game.
 
 ISO MD5 CHECKSUM 
 `ecedcf4008d6b1e0c8cb5e6ab672f472`
 
 GAME ID 
-`ULJM 05086`
+`ULJM-05086`
+
+# Requirements
+There is no console cmd input yet so you need to run this on a IDE by now.
+
+Requirements:
+* JDK8 or superior
+* Graddle for dependency management
+* Java IDE of your preference (e.g. IntelliJ)
 
 # Tools
+Tools are placed on `undeadborn.suikoden.tools.services` package. Tools are mean to be executed through the `undeadborn.suikoden.tools.App` class.
 
-All tools are under the "service" package and should be run using the "App" class.
-Will improve this with a console cmd menu or something in the future.
+**GSD2Unpacker**
 
-Check source code to know more information about them.
+Service to unpack the GSD2 files from the game. There is one GSD2 file for each game. Suikoden I (`gsd1.bin`) and Suikoden II (`gsd2.bin`) These files are suppose to contain all the games data. Seems likely a custom package just containing GZ files.
 
-**GSDUnpacker**
+This tool will export and extract those GZ files into folders.
 
-This class is used to unpack the GSD files found in the game. GSD file seems like a custom package that contains binaries. Inside GSD header we found the list of files and information from them. Seems those files are compressed in GZ format.
-
-# Pending work
-* Identify all Japanese texts inside the uncompressed files. Seems chars are in "Unicode UTF-16 LE" encoding. Most of the texts are at the very end of the files.
-* Identify the required changes needed to be able to insert latin characters.
-* Create a GSDPacker to repack all modified files. Need to investigate the pending unknown bytes from GSD files, to be able to create a valid GSD file.
+# To do
+* Create ISO extractor and repacker tool.
+* Create Text Extractor tool to export all game text data into a readable format.
+* Create Text Replacer tool to replace Japanese chars to a Latin alphabet.
+* Investigate pending unidentified GSD2 bytes to create a valid GSD2 repacker tool.
