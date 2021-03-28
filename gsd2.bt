@@ -1,0 +1,56 @@
+//------------------------------------------------
+//--- 010 Editor v11.0.1 Binary Template
+//
+//      File: 
+//   Authors: 
+//   Version: 
+//   Purpose: 
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+LittleEndian();
+
+local int i, totalFiles = 0;
+
+typedef struct (int size) {
+    byte data[size];
+} FILE;
+
+struct HEADER {
+    int signature <format=hex, comment="GSD2 file signature">;
+
+    if (signature != 0x32445347) {
+        Warning("Does not appear to be a GSD2 file!");
+        Exit(-1);
+    }
+
+    FSkip(4); // common bytes in GSD2 files
+    int size <comment="GSD2 file size in bytes">;
+    FSkip(8); // common bytes in GSD2 files
+
+    int files <comment="Total files GSD2 contains">;
+    totalFiles = files;
+
+    FSkip(8); // common bytes in GSD2 files
+    FSkip(80); // trailing zeros in header
+
+} header <bgcolor=cDkPurple>;
+
+struct METADATA {
+    int index <comment="File index">;
+    int offset <format=hex, comment="File offset">;
+    int length <comment="File length in bytes">;
+    FSkip(8); // variable unidentified bytes
+    FSkip(4); // common bytes in GSD2 files
+    char name[56] <comment="File name">;
+} metadata[totalFiles] <bgcolor=cBlue>;
+
+struct FILES {
+    for (i = 0; i < totalFiles; i++) {
+        FSeek(metadata[i].offset);
+        FILE file(metadata[i].length);
+    }
+} files;
