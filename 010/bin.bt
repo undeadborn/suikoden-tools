@@ -1,0 +1,20 @@
+//------------------------------------------------
+//--- 010 Editor v11.0.1 Binary Template
+//
+//      File: 
+//   Authors: 
+//   Version: 
+//   Purpose: 
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+LittleEndian();
+
+struct HEADER {
+    int size <comment="File size">;
+    FSkip(24);
+    int textsOffset <format=hex, comment="Offset of game texts">;
+} header <bgcolor=cDkPurple>;
