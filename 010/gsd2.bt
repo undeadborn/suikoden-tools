@@ -42,8 +42,9 @@ struct HEADER {
 struct METADATA {
     int index <comment="File index">;
     int offset <format=hex, comment="File offset">;
+    int zsize <comment="Zip file size in bytes">;
     int length <comment="File length in bytes">;
-    FSkip(8); // variable unidentified bytes
+    FSkip(4); // variable unidentified bytes
     FSkip(4); // common bytes in GSD2 files
     char name[56] <comment="File name">;
 } metadata[totalFiles] <bgcolor=cBlue>;
@@ -51,6 +52,6 @@ struct METADATA {
 struct FILES {
     for (i = 0; i < totalFiles; i++) {
         FSeek(metadata[i].offset);
-        FILE file(metadata[i].length);
+        FILE file(metadata[i].zsize);
     }
 } files;
