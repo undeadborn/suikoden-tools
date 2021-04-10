@@ -16,7 +16,7 @@ Tools are placed on `net.undeadborn.suikoden.tools.services` package.
 
 **GSD2Unpacker**
 
-Service to unpack the GSD2 files from the game. There is one GSD2 file for each game. Suikoden I (`gsd1.bin`) and Suikoden II (`gsd2.bin`) These files are suppose to contain all the games data. Seems likely a custom package just containing GZ files.
+Service to unpack the GSD2 files from the game. There is one GSD2 file for each game. Suikoden I (`gsd1.bin`) and Suikoden II (`gsd2.bin`). These files are suppose to contain all the games data. Seems likely a custom package just containing GZ files.
 
 This tool will export those GZ files into a folder.
 
