@@ -1,4 +1,4 @@
-package net.undeadborn.suikoden.tools.model;
+package net.undeadborn.suikoden.tools.gsd2unpacker.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

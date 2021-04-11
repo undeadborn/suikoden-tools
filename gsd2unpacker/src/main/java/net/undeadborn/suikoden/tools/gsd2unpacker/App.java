@@ -1,8 +1,8 @@
-package net.undeadborn.suikoden.tools.services;
+package net.undeadborn.suikoden.tools.gsd2unpacker;
 
 import com.google.common.io.LittleEndianDataInputStream;
-import net.undeadborn.suikoden.tools.common.Constants;
-import net.undeadborn.suikoden.tools.model.BinFile;
+import net.undeadborn.suikoden.tools.gsd2unpacker.common.Constants;
+import net.undeadborn.suikoden.tools.gsd2unpacker.model.BinFile;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -15,21 +15,39 @@ import java.util.stream.IntStream;
  * -- Suikoden I  --> ISO://PSP_GAME/USRDIR/bin/gsd1.bin
  * -- Suikoden II --> ISO://PSP_GAME/USRDIR/bin/gsd2.bin
  */
-public class GSD2Unpacker {
+public class App {
+
+    public static void main(String[] args) throws Exception {
+        if (args.length == 0) {
+            System.err.println("Should provide a GSD2 file path as argument. Exiting program.");
+            System.exit(0);
+        }
+
+        if (!new File(args[0]).exists()) {
+            System.err.println(String.format("File [%s] does not exist.", args[0]));
+            System.exit(0);
+        }
+
+        try {
+            new App().start(args[0]);
+        } catch (Exception e) {
+            System.err.println("Error found. Exiting program.");
+            throw e;
+        }
+    }
 
     /**
      * Trigger the process to unpack binaries
      *
      * @param input The path of the GSD2 file in your filesystem
-     * @param outputFolderSuffix The suffix of the folder which will contain the extracted files
      * @throws IOException error
      */
-    public void start(String input, String outputFolderSuffix) throws IOException {
+    public void start(String input) throws IOException {
         List<BinFile> binFiles = new ArrayList<>();
         File fileInput = new File(input);
 
         String workingFolder = fileInput.getParent();
-        String outputFolder = workingFolder + File.separator + fileInput.getName() + outputFolderSuffix;
+        String outputFolder = workingFolder + File.separator + fileInput.getName() + "_extract";
 
         try (LittleEndianDataInputStream dis = new LittleEndianDataInputStream(new BufferedInputStream(new FileInputStream(fileInput.getAbsolutePath())))) {
             // first 4 bytes are the GSD2 file signature

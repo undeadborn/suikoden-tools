@@ -12,15 +12,19 @@ GAME ID
 * JDK11
 
 # Tools
-Tools are placed on `net.undeadborn.suikoden.tools.services` package.
-
 **GSD2Unpacker**
 
-Service to unpack the GSD2 files from the game. There is one GSD2 file for each game. Suikoden I (`gsd1.bin`) and Suikoden II (`gsd2.bin`). These files are suppose to contain all the games data. Seems likely a custom package just containing GZ files.
+Unpack all files from GSD2 binaries. There is one GSD2 file for each game. These files contain all game data.
+* Suikoden I (`gsd1.bin`)
+* Suikoden II (`gsd2.bin`)
 
-This tool will export those GZ files into a folder.
+Accepts the GSD2 file path as argument. Example:
+
+`gsd2unpacker C:\suikoden\bin\gsd2.bin`
+
+`gsd2unpacker C:\suikoden\bin\gsd1.bin`
 
 # Resources
 
 For the analysis of the bin files I've been using 010 hex editor.
-The templates I created for game files are placed in `src/main/resources/010-files`
+The templates I created for game files are placed in `resources/010-files` folder.

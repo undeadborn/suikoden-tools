@@ -1,2 +1,3 @@
 rootProject.name = 'suikoden-tools'
+include 'gsd2unpacker'
 

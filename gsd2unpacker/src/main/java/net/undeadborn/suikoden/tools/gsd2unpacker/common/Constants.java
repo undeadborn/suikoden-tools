@@ -1,4 +1,4 @@
-package net.undeadborn.suikoden.tools.common;
+package net.undeadborn.suikoden.tools.gsd2unpacker.common;
 
 public final class Constants {
 
