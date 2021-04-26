@@ -34,7 +34,7 @@ Repack all files into a GSD2 bin file.
 
 Accepts the GSD2 file you want to repack and the path containing the files to repack.
 
-All required files for that particular GSD2 file must exist in the path.
+All required files for that particular GSD2 file must exist in the path. Example:
 
 `gsd2repacker gsd2.bin C:\suikoden\gsd2.bin_repack`
 
