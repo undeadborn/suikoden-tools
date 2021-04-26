@@ -3,6 +3,7 @@ package net.undeadborn.suikoden.tools;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import net.undeadborn.suikoden.tools.model.BinFile;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.io.RandomAccessFile;
@@ -14,6 +15,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.List;
+import java.util.zip.GZIPOutputStream;
 
 import static java.util.stream.Collectors.toList;
 
@@ -41,7 +43,7 @@ public class GSD2Repacker {
             new GSD2Repacker().start(args[0], args[1]);
         } catch (Exception e) {
             System.err.println(e);
-            System.err.println("Error found. Exiting program.");
+            System.err.println("\nErrors found. Exiting program.");
             System.exit(1);
         }
     }
@@ -60,14 +62,10 @@ public class GSD2Repacker {
         List<File> inputFiles = Files.walk(Paths.get(path)).filter(Files::isRegularFile).map(Path::toFile).collect(toList());
 
         List<BinFile> binFiles = schemaBinFiles.stream().map(binFile -> {
-            File inputFile = inputFiles.stream().filter(file -> removeExtension(file.getName()).equals(binFile.getName())).findFirst().orElse(null);
+            File inputFile = inputFiles.stream().filter(file -> file.getName().equals(binFile.getName())).findFirst().orElse(null);
             BinFile newBinFile = binFile.toBuilder().build();
             newBinFile.setOffset(0);
-            if (inputFile != null) {
-                newBinFile.setFSize(Long.valueOf(inputFile.length()).intValue());
-                newBinFile.setDSize(Long.valueOf(inputFile.length()).intValue());
-                newBinFile.setFile(inputFile);
-            }
+            newBinFile.setFile(inputFile);
             return newBinFile;
         }).collect(toList());
 
@@ -78,9 +76,10 @@ public class GSD2Repacker {
             throw new IOException();
         }
 
-        String outputFile = path + File.pathSeparator + type + ".repack";
+        String outputFile = path + File.separator + type + ".repack";
+        System.out.println("Repacking files into " + outputFile + " ...");
         try (RandomAccessFile raf = new RandomAccessFile(outputFile, "rw")) {
-            // WRITE HEADER
+            // write header
             raf.write(MAGIC_NUMBER_GSD2);
             raf.write(new byte[]{(byte) 0x65, (byte) 0x00, (byte) 0x00, (byte) 0x00});
             raf.write(new byte[]{(byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x00});
@@ -89,22 +88,31 @@ public class GSD2Repacker {
             raf.write(genByteBuffer(4).putInt(binFiles.size()).array());
             raf.write(new byte[]{(byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x00});
             raf.write(new byte[]{(byte) 0x00, (byte) 0x40, (byte) 0x01, (byte) 0x00});
-            // WRITE FILES
+            // write files
             writeFiles(raf, binFiles);
-            // WRITE FILES METADATA
+            // write files metadata
             writeFilesMetadata(raf, binFiles);
-            // WRITE FINAL FILE SIZE
+            // write final file size
             writeFileSize(raf, Long.valueOf(raf.length()).intValue());
         }
 
+        System.out.println("\nRepack done !!");
+        System.out.println("\nProgram finished");
     }
 
     private void writeFiles(RandomAccessFile raf, List<BinFile> files) throws IOException {
         raf.seek(81920);
         for (int i = 0; i < files.size(); i++) {
-            BinFile binFile = files.get(i);
-            binFile.setOffset(Long.valueOf(raf.getFilePointer()).intValue());
-            raf.write(Files.readAllBytes(binFile.getFile().toPath()));
+            try (ByteArrayOutputStream bos = new ByteArrayOutputStream(); GZIPOutputStream gzip = new GZIPOutputStream(bos)) {
+                BinFile binFile = files.get(i);
+                binFile.setOffset(Long.valueOf(raf.getFilePointer()).intValue());
+                gzip.write(Files.readAllBytes(binFile.getFile().toPath()));
+                gzip.close(); // this is important !!
+                byte[] compressedFile = bos.toByteArray();
+                raf.write(compressedFile);
+                binFile.setFSize(compressedFile.length);
+                binFile.setDSize(compressedFile.length);
+            }
         }
     }
 
@@ -132,10 +140,6 @@ public class GSD2Repacker {
 
     private ByteBuffer genByteBuffer(int allocate) {
         return ByteBuffer.allocate(allocate).order(ByteOrder.LITTLE_ENDIAN);
-    }
-
-    private String removeExtension(String file) {
-        return file.substring(0, file.lastIndexOf('.'));
     }
 
 }

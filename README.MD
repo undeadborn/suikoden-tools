@@ -32,13 +32,14 @@ Accepts the GSD2 file path as argument. Example:
 
 Repack all files into a GSD2 bin file.
 
-Accepts the GSD2 file you want to repack and the path containing the files to repack.
+All required files for that particular GSD2 file must exist in the path provided.
 
-All required files for that particular GSD2 file must exist in the path. Example:
+Accepts the GSD2 file type you want to repack and the path containing the files to repack. Example:
 
 `gsd2repacker gsd2.bin C:\suikoden\gsd2.bin_repack`
 
 # Resources
 
-For the analysis of the bin files I've been using 010 hex editor. The templates I created for game files are placed
-in `resources/010-files` folder.
+For the analysis of the bin files I've been using 010 hex editor.
+
+The templates I created for game files are placed in `resources/010-files` folder.

@@ -1,13 +1,17 @@
 package net.undeadborn.suikoden.tools;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.common.io.ByteSource;
 import com.google.common.io.LittleEndianDataInputStream;
 import net.undeadborn.suikoden.tools.model.BinFile;
 
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.IntStream;
+import java.util.zip.GZIPInputStream;
 
 /**
  * This class is used to unpack GSD2 files from the game
@@ -34,8 +38,9 @@ public class GSD2Unpacker {
         try {
             new GSD2Unpacker().start(args[0]);
         } catch (Exception e) {
+            System.err.println("------------------------------------------------------------------");
             System.err.println(e);
-            System.err.println("Error found. Exiting program.");
+            System.err.println("\nErrors found. Exiting program.");
             System.exit(1);
         }
     }
@@ -46,7 +51,7 @@ public class GSD2Unpacker {
      * @param input The path of the GSD2 file in your filesystem
      * @throws IOException error
      */
-    private void start(String input) throws IOException {
+    private void start(String input) throws Exception {
         List<BinFile> binFiles = new ArrayList<>();
         File fileInput = new File(input);
 
@@ -89,7 +94,7 @@ public class GSD2Unpacker {
 
         // begin with the extract
         System.out.println("--------------------------------------------------------------------");
-        System.out.println("Extracting files ...");
+        System.out.println("Extracting files into " + outputFolder + "...");
 
         // create output folder if doesn't exist
         File directory = new File(outputFolder);
@@ -110,14 +115,19 @@ public class GSD2Unpacker {
                     byte[] arrayBytes = new byte[binFiles.get(i).getFSize()];
                     raf.seek(Integer.valueOf(binFiles.get(i).getOffset()).longValue());
                     raf.read(arrayBytes, 0, binFiles.get(i).getFSize());
-                    // write stream into file
-                    String outputFile = outputFolder + File.separator + binFiles.get(i).getName() + "." + getFileExtension(arrayBytes);
-                    try (FileOutputStream fos = new FileOutputStream(outputFile)) {
-                        fos.write(arrayBytes);
+                    // file must be of gz type
+                    if (!matchesSignature(arrayBytes, MAGIC_NUMBER_GZIP)) {
+                        throw new Exception("File is not of GZ type !");
+                    }
+                    // uncompress and write into file
+                    Path outputFile = Path.of(outputFolder + File.separator + binFiles.get(i).getName());
+                    InputStream inputStream = ByteSource.wrap(arrayBytes).openStream();
+                    try (GZIPInputStream gis = new GZIPInputStream(inputStream)) {
+                        Files.copy(gis, outputFile);
                     }
                 } catch (Exception e) {
                     binFiles.get(i).getErrors().add(
-                            String.format("Error while extracting file --> %s", e.getMessage())
+                            String.format("Error while extracting file --> %s", e)
                     );
                 }
             }
@@ -125,13 +135,12 @@ public class GSD2Unpacker {
 
         // return any errors found
         if (binFiles.stream().anyMatch(file -> file.getErrors().size() > 0)) {
-            System.err.println("\nErrors found in some files");
             binFiles.stream().filter(file -> file.getErrors().size() > 0).forEach(file -> {
                 System.err.println("------------------------------------------------------------------");
                 System.err.println(String.format("Errors found in file [%s]", file.getName()));
                 file.getErrors().forEach(System.err::println);
             });
-            System.err.println("\nProgram finished with errors");
+            throw new Exception("Errors found in some files");
         } else {
             System.out.println("\nAll files extracted successfully !!");
             System.out.println("\nProgram finished");
@@ -147,20 +156,6 @@ public class GSD2Unpacker {
      */
     private Boolean matchesSignature(byte[] arrayBytes, byte[] signature) {
         return IntStream.range(0, signature.length).allMatch(i -> arrayBytes[i] == signature[i]);
-    }
-
-    /**
-     * Get the file extension using the file signature (the first bytes of the file)
-     *
-     * @param arrayBytes the array bytes
-     * @return the file extension
-     * @throws Exception if no file extension found
-     */
-    private String getFileExtension(byte[] arrayBytes) throws Exception {
-        if (matchesSignature(arrayBytes, MAGIC_NUMBER_GZIP)) {
-            return "gz";
-        }
-        throw new Exception("No file format found for the specific file");
     }
 
 }
