@@ -1,0 +1,1810 @@
+[
+  {
+    "id": 1,
+    "name": "va1.bin",
+    "offset": 81920,
+    "dummy": 135574351,
+    "fsize": 1025087,
+    "dsize": 1026048
+  },
+  {
+    "id": 2,
+    "name": "va2.bin",
+    "offset": 1107968,
+    "dummy": 100779834,
+    "fsize": 760128,
+    "dsize": 761856
+  },
+  {
+    "id": 3,
+    "name": "va3.bin",
+    "offset": 1869824,
+    "dummy": 112641793,
+    "fsize": 855148,
+    "dsize": 856064
+  },
+  {
+    "id": 4,
+    "name": "va4.bin",
+    "offset": 2725888,
+    "dummy": 101799598,
+    "fsize": 772571,
+    "dsize": 774144
+  },
+  {
+    "id": 5,
+    "name": "va4b.bin",
+    "offset": 3500032,
+    "dummy": 21898227,
+    "fsize": 170437,
+    "dsize": 172032
+  },
+  {
+    "id": 6,
+    "name": "va5.bin",
+    "offset": 3672064,
+    "dummy": 41657991,
+    "fsize": 314455,
+    "dsize": 315392
+  },
+  {
+    "id": 7,
+    "name": "va6.bin",
+    "offset": 3987456,
+    "dummy": 37702663,
+    "fsize": 286787,
+    "dsize": 288768
+  },
+  {
+    "id": 8,
+    "name": "va7.bin",
+    "offset": 4276224,
+    "dummy": 105996461,
+    "fsize": 797362,
+    "dsize": 798720
+  },
+  {
+    "id": 9,
+    "name": "va8.bin",
+    "offset": 5074944,
+    "dummy": 64021792,
+    "fsize": 487954,
+    "dsize": 489472
+  },
+  {
+    "id": 10,
+    "name": "va9.bin",
+    "offset": 5564416,
+    "dummy": 32973680,
+    "fsize": 250616,
+    "dsize": 251904
+  },
+  {
+    "id": 11,
+    "name": "vaa.bin",
+    "offset": 5816320,
+    "dummy": 123143456,
+    "fsize": 935520,
+    "dsize": 935936
+  },
+  {
+    "id": 12,
+    "name": "vaad.bin",
+    "offset": 6752256,
+    "dummy": 29721982,
+    "fsize": 226804,
+    "dsize": 227328
+  },
+  {
+    "id": 13,
+    "name": "vac.bin",
+    "offset": 6979584,
+    "dummy": 128004547,
+    "fsize": 969273,
+    "dsize": 970752
+  },
+  {
+    "id": 14,
+    "name": "vad.bin",
+    "offset": 7950336,
+    "dummy": 134889593,
+    "fsize": 1024943,
+    "dsize": 1026048
+  },
+  {
+    "id": 15,
+    "name": "vb1.bin",
+    "offset": 8976384,
+    "dummy": 96324054,
+    "fsize": 732811,
+    "dsize": 733184
+  },
+  {
+    "id": 16,
+    "name": "vb2.bin",
+    "offset": 9709568,
+    "dummy": 80494309,
+    "fsize": 612851,
+    "dsize": 614400
+  },
+  {
+    "id": 17,
+    "name": "vb3.bin",
+    "offset": 10323968,
+    "dummy": 127813956,
+    "fsize": 966284,
+    "dsize": 966656
+  },
+  {
+    "id": 18,
+    "name": "vb4.bin",
+    "offset": 11290624,
+    "dummy": 49177423,
+    "fsize": 371675,
+    "dsize": 372736
+  },
+  {
+    "id": 19,
+    "name": "vb5.bin",
+    "offset": 11663360,
+    "dummy": 86246458,
+    "fsize": 654046,
+    "dsize": 655360
+  },
+  {
+    "id": 20,
+    "name": "vb5a1.bin",
+    "offset": 12318720,
+    "dummy": 76243774,
+    "fsize": 581328,
+    "dsize": 581632
+  },
+  {
+    "id": 21,
+    "name": "vb5a2.bin",
+    "offset": 12900352,
+    "dummy": 92232494,
+    "fsize": 704912,
+    "dsize": 706560
+  },
+  {
+    "id": 22,
+    "name": "vb5ab.bin",
+    "offset": 13606912,
+    "dummy": 50202404,
+    "fsize": 385590,
+    "dsize": 387072
+  },
+  {
+    "id": 23,
+    "name": "vb5ag.bin",
+    "offset": 13993984,
+    "dummy": 111196376,
+    "fsize": 845948,
+    "dsize": 847872
+  },
+  {
+    "id": 24,
+    "name": "vb5b1.bin",
+    "offset": 14841856,
+    "dummy": 95022941,
+    "fsize": 725895,
+    "dsize": 727040
+  },
+  {
+    "id": 25,
+    "name": "vb5b2.bin",
+    "offset": 15568896,
+    "dummy": 86642341,
+    "fsize": 660811,
+    "dsize": 661504
+  },
+  {
+    "id": 26,
+    "name": "vb5b3.bin",
+    "offset": 16230400,
+    "dummy": 100715350,
+    "fsize": 769077,
+    "dsize": 770048
+  },
+  {
+    "id": 27,
+    "name": "vb5b4.bin",
+    "offset": 17000448,
+    "dummy": 61687218,
+    "fsize": 469866,
+    "dsize": 471040
+  },
+  {
+    "id": 28,
+    "name": "vb5ba.bin",
+    "offset": 17471488,
+    "dummy": 64957323,
+    "fsize": 494646,
+    "dsize": 495616
+  },
+  {
+    "id": 29,
+    "name": "vb5bb.bin",
+    "offset": 17967104,
+    "dummy": 54726232,
+    "fsize": 421356,
+    "dsize": 421888
+  },
+  {
+    "id": 30,
+    "name": "vb5bg.bin",
+    "offset": 18388992,
+    "dummy": 113394304,
+    "fsize": 865771,
+    "dsize": 866304
+  },
+  {
+    "id": 31,
+    "name": "vb5c1.bin",
+    "offset": 19255296,
+    "dummy": 113649828,
+    "fsize": 867968,
+    "dsize": 868352
+  },
+  {
+    "id": 32,
+    "name": "vb5c2.bin",
+    "offset": 20123648,
+    "dummy": 74020108,
+    "fsize": 566680,
+    "dsize": 567296
+  },
+  {
+    "id": 33,
+    "name": "vb5c3.bin",
+    "offset": 20690944,
+    "dummy": 56617610,
+    "fsize": 431983,
+    "dsize": 432128
+  },
+  {
+    "id": 34,
+    "name": "vb5c4.bin",
+    "offset": 21123072,
+    "dummy": 126964057,
+    "fsize": 967116,
+    "dsize": 968704
+  },
+  {
+    "id": 35,
+    "name": "vb5ca.bin",
+    "offset": 22091776,
+    "dummy": 70884003,
+    "fsize": 539503,
+    "dsize": 540672
+  },
+  {
+    "id": 36,
+    "name": "vb5cb.bin",
+    "offset": 22632448,
+    "dummy": 52888402,
+    "fsize": 406951,
+    "dsize": 407552
+  },
+  {
+    "id": 37,
+    "name": "vb5cc.bin",
+    "offset": 23040000,
+    "dummy": 49570045,
+    "fsize": 379272,
+    "dsize": 380928
+  },
+  {
+    "id": 38,
+    "name": "vb5cg.bin",
+    "offset": 23420928,
+    "dummy": 132157073,
+    "fsize": 1005114,
+    "dsize": 1005568
+  },
+  {
+    "id": 39,
+    "name": "vb5g.bin",
+    "offset": 24426496,
+    "dummy": 48241022,
+    "fsize": 370669,
+    "dsize": 370688
+  },
+  {
+    "id": 40,
+    "name": "vb5i0.bin",
+    "offset": 24797184,
+    "dummy": 32133111,
+    "fsize": 248018,
+    "dsize": 249856
+  },
+  {
+    "id": 41,
+    "name": "vb5i2.bin",
+    "offset": 25047040,
+    "dummy": 21346176,
+    "fsize": 163014,
+    "dsize": 163840
+  },
+  {
+    "id": 42,
+    "name": "vb5i3.bin",
+    "offset": 25210880,
+    "dummy": 21567288,
+    "fsize": 165383,
+    "dsize": 165888
+  },
+  {
+    "id": 43,
+    "name": "vb5i4.bin",
+    "offset": 25376768,
+    "dummy": 22006743,
+    "fsize": 168246,
+    "dsize": 169984
+  },
+  {
+    "id": 44,
+    "name": "vb6.bin",
+    "offset": 25546752,
+    "dummy": 109843730,
+    "fsize": 834473,
+    "dsize": 835584
+  },
+  {
+    "id": 45,
+    "name": "vb7.bin",
+    "offset": 26382336,
+    "dummy": 39125494,
+    "fsize": 297612,
+    "dsize": 299008
+  },
+  {
+    "id": 46,
+    "name": "vb7a.bin",
+    "offset": 26681344,
+    "dummy": 33472426,
+    "fsize": 254800,
+    "dsize": 256000
+  },
+  {
+    "id": 47,
+    "name": "vb7d.bin",
+    "offset": 26937344,
+    "dummy": 26266367,
+    "fsize": 199800,
+    "dsize": 200704
+  },
+  {
+    "id": 48,
+    "name": "vb8.bin",
+    "offset": 27138048,
+    "dummy": 42132806,
+    "fsize": 318191,
+    "dsize": 319488
+  },
+  {
+    "id": 49,
+    "name": "vb9.bin",
+    "offset": 27457536,
+    "dummy": 37540931,
+    "fsize": 287801,
+    "dsize": 288768
+  },
+  {
+    "id": 50,
+    "name": "vc1.bin",
+    "offset": 27746304,
+    "dummy": 78563971,
+    "fsize": 598049,
+    "dsize": 600064
+  },
+  {
+    "id": 51,
+    "name": "vc2.bin",
+    "offset": 28346368,
+    "dummy": 85050190,
+    "fsize": 649387,
+    "dsize": 651264
+  },
+  {
+    "id": 52,
+    "name": "vc3.bin",
+    "offset": 28997632,
+    "dummy": 59848483,
+    "fsize": 452307,
+    "dsize": 452608
+  },
+  {
+    "id": 53,
+    "name": "vc4.bin",
+    "offset": 29450240,
+    "dummy": 58789999,
+    "fsize": 448768,
+    "dsize": 450560
+  },
+  {
+    "id": 54,
+    "name": "vc5.bin",
+    "offset": 29900800,
+    "dummy": 24656037,
+    "fsize": 190366,
+    "dsize": 190464
+  },
+  {
+    "id": 55,
+    "name": "vc6.bin",
+    "offset": 30091264,
+    "dummy": 84798825,
+    "fsize": 645225,
+    "dsize": 647168
+  },
+  {
+    "id": 56,
+    "name": "vd1.bin",
+    "offset": 30738432,
+    "dummy": 119734195,
+    "fsize": 913826,
+    "dsize": 915456
+  },
+  {
+    "id": 57,
+    "name": "vd2.bin",
+    "offset": 31653888,
+    "dummy": 87471641,
+    "fsize": 668461,
+    "dsize": 669696
+  },
+  {
+    "id": 58,
+    "name": "vd3.bin",
+    "offset": 32323584,
+    "dummy": 104042107,
+    "fsize": 791187,
+    "dsize": 792576
+  },
+  {
+    "id": 59,
+    "name": "vd4.bin",
+    "offset": 33116160,
+    "dummy": 71326648,
+    "fsize": 546071,
+    "dsize": 546816
+  },
+  {
+    "id": 60,
+    "name": "vd5.bin",
+    "offset": 33662976,
+    "dummy": 112860170,
+    "fsize": 859955,
+    "dsize": 860160
+  },
+  {
+    "id": 61,
+    "name": "vd6.bin",
+    "offset": 34523136,
+    "dummy": 91536756,
+    "fsize": 697575,
+    "dsize": 698368
+  },
+  {
+    "id": 62,
+    "name": "vd7.bin",
+    "offset": 35221504,
+    "dummy": 59253492,
+    "fsize": 452881,
+    "dsize": 454656
+  },
+  {
+    "id": 63,
+    "name": "ve1.bin",
+    "offset": 35676160,
+    "dummy": 81857004,
+    "fsize": 621938,
+    "dsize": 622592
+  },
+  {
+    "id": 64,
+    "name": "ve2.bin",
+    "offset": 36298752,
+    "dummy": 105736406,
+    "fsize": 804500,
+    "dsize": 804864
+  },
+  {
+    "id": 65,
+    "name": "ve3.bin",
+    "offset": 37103616,
+    "dummy": 124343484,
+    "fsize": 942308,
+    "dsize": 944128
+  },
+  {
+    "id": 66,
+    "name": "ve4.bin",
+    "offset": 38047744,
+    "dummy": 37941060,
+    "fsize": 289427,
+    "dsize": 290816
+  },
+  {
+    "id": 67,
+    "name": "ve5.bin",
+    "offset": 38338560,
+    "dummy": 70526948,
+    "fsize": 536669,
+    "dsize": 538624
+  },
+  {
+    "id": 68,
+    "name": "ve6.bin",
+    "offset": 38877184,
+    "dummy": 65642563,
+    "fsize": 500107,
+    "dsize": 501760
+  },
+  {
+    "id": 69,
+    "name": "vf1.bin",
+    "offset": 39378944,
+    "dummy": 85536409,
+    "fsize": 653259,
+    "dsize": 653312
+  },
+  {
+    "id": 70,
+    "name": "vf2.bin",
+    "offset": 40032256,
+    "dummy": 74485678,
+    "fsize": 571253,
+    "dsize": 571392
+  },
+  {
+    "id": 71,
+    "name": "vf3.bin",
+    "offset": 40603648,
+    "dummy": 106481423,
+    "fsize": 813222,
+    "dsize": 815104
+  },
+  {
+    "id": 72,
+    "name": "vf4.bin",
+    "offset": 41418752,
+    "dummy": 55049278,
+    "fsize": 423786,
+    "dsize": 423936
+  },
+  {
+    "id": 73,
+    "name": "vg1.bin",
+    "offset": 41842688,
+    "dummy": 74143619,
+    "fsize": 567367,
+    "dsize": 569344
+  },
+  {
+    "id": 74,
+    "name": "vg2.bin",
+    "offset": 42412032,
+    "dummy": 49039102,
+    "fsize": 374312,
+    "dsize": 374784
+  },
+  {
+    "id": 75,
+    "name": "vg3.bin",
+    "offset": 42786816,
+    "dummy": 25339050,
+    "fsize": 193016,
+    "dsize": 194560
+  },
+  {
+    "id": 76,
+    "name": "vh1.bin",
+    "offset": 42981376,
+    "dummy": 91313685,
+    "fsize": 700008,
+    "dsize": 700416
+  },
+  {
+    "id": 77,
+    "name": "vh2.bin",
+    "offset": 43681792,
+    "dummy": 25898635,
+    "fsize": 199513,
+    "dsize": 200704
+  },
+  {
+    "id": 78,
+    "name": "vi1.bin",
+    "offset": 43882496,
+    "dummy": 69784240,
+    "fsize": 534244,
+    "dsize": 534528
+  },
+  {
+    "id": 79,
+    "name": "vi2.bin",
+    "offset": 44417024,
+    "dummy": 67938324,
+    "fsize": 521009,
+    "dsize": 522240
+  },
+  {
+    "id": 80,
+    "name": "vs1.bin",
+    "offset": 44939264,
+    "dummy": 116586254,
+    "fsize": 892076,
+    "dsize": 892928
+  },
+  {
+    "id": 81,
+    "name": "vs2.bin",
+    "offset": 45832192,
+    "dummy": 102152961,
+    "fsize": 782254,
+    "dsize": 782336
+  },
+  {
+    "id": 82,
+    "name": "vz1.bin",
+    "offset": 46614528,
+    "dummy": 25131322,
+    "fsize": 193769,
+    "dsize": 194560
+  },
+  {
+    "id": 83,
+    "name": "vz2.bin",
+    "offset": 46809088,
+    "dummy": 111551231,
+    "fsize": 841633,
+    "dsize": 841728
+  },
+  {
+    "id": 84,
+    "name": "vz3.bin",
+    "offset": 47650816,
+    "dummy": 107466760,
+    "fsize": 814485,
+    "dsize": 815104
+  },
+  {
+    "id": 85,
+    "name": "vz5.bin",
+    "offset": 48465920,
+    "dummy": 41509412,
+    "fsize": 313806,
+    "dsize": 315392
+  },
+  {
+    "id": 86,
+    "name": "vz7.bin",
+    "offset": 48781312,
+    "dummy": 15822020,
+    "fsize": 119360,
+    "dsize": 120832
+  },
+  {
+    "id": 87,
+    "name": "vz8.bin",
+    "offset": 48902144,
+    "dummy": 6675500,
+    "fsize": 52263,
+    "dsize": 53248
+  },
+  {
+    "id": 88,
+    "name": "vzv.bin",
+    "offset": 48955392,
+    "dummy": 22801212,
+    "fsize": 175305,
+    "dsize": 176128
+  },
+  {
+    "id": 89,
+    "name": "a_data.bin",
+    "offset": 49131520,
+    "dummy": 38462458,
+    "fsize": 291762,
+    "dsize": 292864
+  },
+  {
+    "id": 90,
+    "name": "b_data.bin",
+    "offset": 49424384,
+    "dummy": 36589430,
+    "fsize": 277992,
+    "dsize": 278528
+  },
+  {
+    "id": 91,
+    "name": "c_data.bin",
+    "offset": 49702912,
+    "dummy": 36222608,
+    "fsize": 273997,
+    "dsize": 274432
+  },
+  {
+    "id": 92,
+    "name": "d_data.bin",
+    "offset": 49977344,
+    "dummy": 37303367,
+    "fsize": 281951,
+    "dsize": 282624
+  },
+  {
+    "id": 93,
+    "name": "e_data.bin",
+    "offset": 50259968,
+    "dummy": 40650502,
+    "fsize": 307969,
+    "dsize": 309248
+  },
+  {
+    "id": 94,
+    "name": "f_data.bin",
+    "offset": 50569216,
+    "dummy": 36172321,
+    "fsize": 273853,
+    "dsize": 274432
+  },
+  {
+    "id": 95,
+    "name": "g_data.bin",
+    "offset": 50843648,
+    "dummy": 38058788,
+    "fsize": 287632,
+    "dsize": 288768
+  },
+  {
+    "id": 96,
+    "name": "h_data.bin",
+    "offset": 51132416,
+    "dummy": 39827263,
+    "fsize": 301989,
+    "dsize": 303104
+  },
+  {
+    "id": 97,
+    "name": "j_data.bin",
+    "offset": 51435520,
+    "dummy": 28483975,
+    "fsize": 215297,
+    "dsize": 217088
+  },
+  {
+    "id": 98,
+    "name": "k_data.bin",
+    "offset": 51652608,
+    "dummy": 30148120,
+    "fsize": 227254,
+    "dsize": 227328
+  },
+  {
+    "id": 99,
+    "name": "z_data.bin",
+    "offset": 51879936,
+    "dummy": 36076856,
+    "fsize": 273135,
+    "dsize": 274432
+  },
+  {
+    "id": 100,
+    "name": "ail.bin",
+    "offset": 52154368,
+    "dummy": 3028540,
+    "fsize": 23239,
+    "dsize": 24576
+  },
+  {
+    "id": 101,
+    "name": "anj.bin",
+    "offset": 52178944,
+    "dummy": 3438496,
+    "fsize": 26430,
+    "dsize": 26624
+  },
+  {
+    "id": 102,
+    "name": "ant.bin",
+    "offset": 52205568,
+    "dummy": 3240298,
+    "fsize": 24883,
+    "dsize": 26624
+  },
+  {
+    "id": 103,
+    "name": "are.bin",
+    "offset": 52232192,
+    "dummy": 3222551,
+    "fsize": 24933,
+    "dsize": 26624
+  },
+  {
+    "id": 104,
+    "name": "bal.bin",
+    "offset": 52258816,
+    "dummy": 3098632,
+    "fsize": 23682,
+    "dsize": 24576
+  },
+  {
+    "id": 105,
+    "name": "bel.bin",
+    "offset": 52283392,
+    "dummy": 3387592,
+    "fsize": 25973,
+    "dsize": 26624
+  },
+  {
+    "id": 106,
+    "name": "blk.bin",
+    "offset": 52310016,
+    "dummy": 3309477,
+    "fsize": 25450,
+    "dsize": 26624
+  },
+  {
+    "id": 107,
+    "name": "cam.bin",
+    "offset": 52336640,
+    "dummy": 2965160,
+    "fsize": 22878,
+    "dsize": 24576
+  },
+  {
+    "id": 108,
+    "name": "cob.bin",
+    "offset": 52361216,
+    "dummy": 3069010,
+    "fsize": 23382,
+    "dsize": 24576
+  },
+  {
+    "id": 109,
+    "name": "cre.bin",
+    "offset": 52385792,
+    "dummy": 3086884,
+    "fsize": 23680,
+    "dsize": 24576
+  },
+  {
+    "id": 110,
+    "name": "cri.bin",
+    "offset": 52410368,
+    "dummy": 2609188,
+    "fsize": 20126,
+    "dsize": 20480
+  },
+  {
+    "id": 111,
+    "name": "cro.bin",
+    "offset": 52430848,
+    "dummy": 2984412,
+    "fsize": 23205,
+    "dsize": 24576
+  },
+  {
+    "id": 112,
+    "name": "crw.bin",
+    "offset": 52455424,
+    "dummy": 3913409,
+    "fsize": 29982,
+    "dsize": 30720
+  },
+  {
+    "id": 113,
+    "name": "csi.bin",
+    "offset": 52486144,
+    "dummy": 3375364,
+    "fsize": 25837,
+    "dsize": 26624
+  },
+  {
+    "id": 114,
+    "name": "eik.bin",
+    "offset": 52512768,
+    "dummy": 3201493,
+    "fsize": 24518,
+    "dsize": 24576
+  },
+  {
+    "id": 115,
+    "name": "fma.bin",
+    "offset": 52537344,
+    "dummy": 3169065,
+    "fsize": 24334,
+    "dsize": 24576
+  },
+  {
+    "id": 116,
+    "name": "fri.bin",
+    "offset": 52561920,
+    "dummy": 3146206,
+    "fsize": 24230,
+    "dsize": 24576
+  },
+  {
+    "id": 117,
+    "name": "fuk.bin",
+    "offset": 52586496,
+    "dummy": 2941699,
+    "fsize": 23051,
+    "dsize": 24576
+  },
+  {
+    "id": 118,
+    "name": "fut.bin",
+    "offset": 52611072,
+    "dummy": 2933244,
+    "fsize": 22760,
+    "dsize": 24576
+  },
+  {
+    "id": 119,
+    "name": "fuu.bin",
+    "offset": 52635648,
+    "dummy": 3655825,
+    "fsize": 27742,
+    "dsize": 28672
+  },
+  {
+    "id": 120,
+    "name": "gen.bin",
+    "offset": 52664320,
+    "dummy": 3082564,
+    "fsize": 23817,
+    "dsize": 24576
+  },
+  {
+    "id": 121,
+    "name": "gon.bin",
+    "offset": 52688896,
+    "dummy": 3036656,
+    "fsize": 23350,
+    "dsize": 24576
+  },
+  {
+    "id": 122,
+    "name": "gre.bin",
+    "offset": 52713472,
+    "dummy": 3284862,
+    "fsize": 25207,
+    "dsize": 26624
+  },
+  {
+    "id": 123,
+    "name": "gri.bin",
+    "offset": 52740096,
+    "dummy": 3323777,
+    "fsize": 25569,
+    "dsize": 26624
+  },
+  {
+    "id": 124,
+    "name": "grn.bin",
+    "offset": 52766720,
+    "dummy": 3273461,
+    "fsize": 24937,
+    "dsize": 26624
+  },
+  {
+    "id": 125,
+    "name": "haf.bin",
+    "offset": 52793344,
+    "dummy": 3281955,
+    "fsize": 25182,
+    "dsize": 26624
+  },
+  {
+    "id": 126,
+    "name": "hel.bin",
+    "offset": 52819968,
+    "dummy": 3387241,
+    "fsize": 26118,
+    "dsize": 26624
+  },
+  {
+    "id": 127,
+    "name": "hic.bin",
+    "offset": 52846592,
+    "dummy": 3138207,
+    "fsize": 23995,
+    "dsize": 24576
+  },
+  {
+    "id": 128,
+    "name": "jup.bin",
+    "offset": 52871168,
+    "dummy": 3204722,
+    "fsize": 24706,
+    "dsize": 26624
+  },
+  {
+    "id": 129,
+    "name": "kag.bin",
+    "offset": 52897792,
+    "dummy": 3096237,
+    "fsize": 23789,
+    "dsize": 24576
+  },
+  {
+    "id": 130,
+    "name": "kai.bin",
+    "offset": 52922368,
+    "dummy": 2951401,
+    "fsize": 22841,
+    "dsize": 24576
+  },
+  {
+    "id": 131,
+    "name": "kam.bin",
+    "offset": 52946944,
+    "dummy": 2976766,
+    "fsize": 23042,
+    "dsize": 24576
+  },
+  {
+    "id": 132,
+    "name": "kas.bin",
+    "offset": 52971520,
+    "dummy": 3301440,
+    "fsize": 25560,
+    "dsize": 26624
+  },
+  {
+    "id": 133,
+    "name": "kes.bin",
+    "offset": 52998144,
+    "dummy": 2995611,
+    "fsize": 23100,
+    "dsize": 24576
+  },
+  {
+    "id": 134,
+    "name": "kib.bin",
+    "offset": 53022720,
+    "dummy": 3049218,
+    "fsize": 23194,
+    "dsize": 24576
+  },
+  {
+    "id": 135,
+    "name": "kil.bin",
+    "offset": 53047296,
+    "dummy": 2727090,
+    "fsize": 20922,
+    "dsize": 22528
+  },
+  {
+    "id": 136,
+    "name": "kna.bin",
+    "offset": 53069824,
+    "dummy": 3391830,
+    "fsize": 25887,
+    "dsize": 26624
+  },
+  {
+    "id": 137,
+    "name": "kra.bin",
+    "offset": 53096448,
+    "dummy": 3228920,
+    "fsize": 24990,
+    "dsize": 26624
+  },
+  {
+    "id": 138,
+    "name": "krk.bin",
+    "offset": 53123072,
+    "dummy": 3265016,
+    "fsize": 24931,
+    "dsize": 26624
+  },
+  {
+    "id": 139,
+    "name": "kwa.bin",
+    "offset": 53149696,
+    "dummy": 3260013,
+    "fsize": 25109,
+    "dsize": 26624
+  },
+  {
+    "id": 140,
+    "name": "leo.bin",
+    "offset": 53176320,
+    "dummy": 3112310,
+    "fsize": 24080,
+    "dsize": 24576
+  },
+  {
+    "id": 141,
+    "name": "lot.bin",
+    "offset": 53200896,
+    "dummy": 3205138,
+    "fsize": 24884,
+    "dsize": 26624
+  },
+  {
+    "id": 142,
+    "name": "lub.bin",
+    "offset": 53227520,
+    "dummy": 2920282,
+    "fsize": 22560,
+    "dsize": 24576
+  },
+  {
+    "id": 143,
+    "name": "luk.bin",
+    "offset": 53252096,
+    "dummy": 3226384,
+    "fsize": 24484,
+    "dsize": 24576
+  },
+  {
+    "id": 144,
+    "name": "maa.bin",
+    "offset": 53276672,
+    "dummy": 2824392,
+    "fsize": 21825,
+    "dsize": 22528
+  },
+  {
+    "id": 145,
+    "name": "meg.bin",
+    "offset": 53299200,
+    "dummy": 3273485,
+    "fsize": 24997,
+    "dsize": 26624
+  },
+  {
+    "id": 146,
+    "name": "mes.bin",
+    "offset": 53325824,
+    "dummy": 3133843,
+    "fsize": 23962,
+    "dsize": 24576
+  },
+  {
+    "id": 147,
+    "name": "mil.bin",
+    "offset": 53350400,
+    "dummy": 3892779,
+    "fsize": 29979,
+    "dsize": 30720
+  },
+  {
+    "id": 148,
+    "name": "mis.bin",
+    "offset": 53381120,
+    "dummy": 2880814,
+    "fsize": 22154,
+    "dsize": 22528
+  },
+  {
+    "id": 149,
+    "name": "moh.bin",
+    "offset": 53403648,
+    "dummy": 3519332,
+    "fsize": 27196,
+    "dsize": 28672
+  },
+  {
+    "id": 150,
+    "name": "mos.bin",
+    "offset": 53432320,
+    "dummy": 2896487,
+    "fsize": 22592,
+    "dsize": 24576
+  },
+  {
+    "id": 151,
+    "name": "mri.bin",
+    "offset": 53456896,
+    "dummy": 3337881,
+    "fsize": 25752,
+    "dsize": 26624
+  },
+  {
+    "id": 152,
+    "name": "muu.bin",
+    "offset": 53483520,
+    "dummy": 2878843,
+    "fsize": 22441,
+    "dsize": 22528
+  },
+  {
+    "id": 153,
+    "name": "myi.bin",
+    "offset": 53506048,
+    "dummy": 3697201,
+    "fsize": 28866,
+    "dsize": 30720
+  },
+  {
+    "id": 154,
+    "name": "ode.bin",
+    "offset": 53536768,
+    "dummy": 2742525,
+    "fsize": 21153,
+    "dsize": 22528
+  },
+  {
+    "id": 155,
+    "name": "pan.bin",
+    "offset": 53559296,
+    "dummy": 3491364,
+    "fsize": 27054,
+    "dsize": 28672
+  },
+  {
+    "id": 156,
+    "name": "psu.bin",
+    "offset": 53587968,
+    "dummy": 3494931,
+    "fsize": 26754,
+    "dsize": 28672
+  },
+  {
+    "id": 157,
+    "name": "qin.bin",
+    "offset": 53616640,
+    "dummy": 3029365,
+    "fsize": 23144,
+    "dsize": 24576
+  },
+  {
+    "id": 158,
+    "name": "rep.bin",
+    "offset": 53641216,
+    "dummy": 3361197,
+    "fsize": 25735,
+    "dsize": 26624
+  },
+  {
+    "id": 159,
+    "name": "res.bin",
+    "offset": 53667840,
+    "dummy": 3304533,
+    "fsize": 25334,
+    "dsize": 26624
+  },
+  {
+    "id": 160,
+    "name": "ror.bin",
+    "offset": 53694464,
+    "dummy": 2798904,
+    "fsize": 21439,
+    "dsize": 22528
+  },
+  {
+    "id": 161,
+    "name": "ryk.bin",
+    "offset": 53716992,
+    "dummy": 2795279,
+    "fsize": 21651,
+    "dsize": 22528
+  },
+  {
+    "id": 162,
+    "name": "sas.bin",
+    "offset": 53739520,
+    "dummy": 3056630,
+    "fsize": 23647,
+    "dsize": 24576
+  },
+  {
+    "id": 163,
+    "name": "sei.bin",
+    "offset": 53764096,
+    "dummy": 3051345,
+    "fsize": 23411,
+    "dsize": 24576
+  },
+  {
+    "id": 164,
+    "name": "sel.bin",
+    "offset": 53788672,
+    "dummy": 2992929,
+    "fsize": 22910,
+    "dsize": 24576
+  },
+  {
+    "id": 165,
+    "name": "shu.bin",
+    "offset": 53813248,
+    "dummy": 3756945,
+    "fsize": 28841,
+    "dsize": 30720
+  },
+  {
+    "id": 166,
+    "name": "sid.bin",
+    "offset": 53843968,
+    "dummy": 3490712,
+    "fsize": 26928,
+    "dsize": 28672
+  },
+  {
+    "id": 167,
+    "name": "sil.bin",
+    "offset": 53872640,
+    "dummy": 2581910,
+    "fsize": 19818,
+    "dsize": 20480
+  },
+  {
+    "id": 168,
+    "name": "sni.bin",
+    "offset": 53893120,
+    "dummy": 3650353,
+    "fsize": 28056,
+    "dsize": 28672
+  },
+  {
+    "id": 169,
+    "name": "sta.bin",
+    "offset": 53921792,
+    "dummy": 2896451,
+    "fsize": 22399,
+    "dsize": 22528
+  },
+  {
+    "id": 170,
+    "name": "syy.bin",
+    "offset": 53944320,
+    "dummy": 2902281,
+    "fsize": 22360,
+    "dsize": 22528
+  },
+  {
+    "id": 171,
+    "name": "tai.bin",
+    "offset": 53966848,
+    "dummy": 3043384,
+    "fsize": 23227,
+    "dsize": 24576
+  },
+  {
+    "id": 172,
+    "name": "ted.bin",
+    "offset": 53991424,
+    "dummy": 2623003,
+    "fsize": 19876,
+    "dsize": 20480
+  },
+  {
+    "id": 173,
+    "name": "ten.bin",
+    "offset": 54011904,
+    "dummy": 3194034,
+    "fsize": 24567,
+    "dsize": 24576
+  },
+  {
+    "id": 174,
+    "name": "vic.bin",
+    "offset": 54036480,
+    "dummy": 3051717,
+    "fsize": 23335,
+    "dsize": 24576
+  },
+  {
+    "id": 175,
+    "name": "vre.bin",
+    "offset": 54061056,
+    "dummy": 3336761,
+    "fsize": 25855,
+    "dsize": 26624
+  },
+  {
+    "id": 176,
+    "name": "wou.bin",
+    "offset": 54087680,
+    "dummy": 2948179,
+    "fsize": 22678,
+    "dsize": 24576
+  },
+  {
+    "id": 177,
+    "name": "yam.bin",
+    "offset": 54112256,
+    "dummy": 3110391,
+    "fsize": 23847,
+    "dsize": 24576
+  },
+  {
+    "id": 178,
+    "name": "gsd1_font_jpn_all.bin",
+    "offset": 54136832,
+    "dummy": 2771738,
+    "fsize": 20055,
+    "dsize": 20480
+  },
+  {
+    "id": 179,
+    "name": "gsd1_window_csr_0.bin",
+    "offset": 54157312,
+    "dummy": 244794,
+    "fsize": 1852,
+    "dsize": 2048
+  },
+  {
+    "id": 180,
+    "name": "gsd1_window_csr_1.bin",
+    "offset": 54159360,
+    "dummy": 319207,
+    "fsize": 2412,
+    "dsize": 4096
+  },
+  {
+    "id": 181,
+    "name": "gsd1_window_csr_2.bin",
+    "offset": 54163456,
+    "dummy": 280942,
+    "fsize": 2098,
+    "dsize": 4096
+  },
+  {
+    "id": 182,
+    "name": "gsd1_window_csr_3.bin",
+    "offset": 54167552,
+    "dummy": 234447,
+    "fsize": 1730,
+    "dsize": 2048
+  },
+  {
+    "id": 183,
+    "name": "gsd1_window_csr_4.bin",
+    "offset": 54169600,
+    "dummy": 270475,
+    "fsize": 1986,
+    "dsize": 2048
+  },
+  {
+    "id": 184,
+    "name": "gsd1_window_col_0.bin",
+    "offset": 54171648,
+    "dummy": 15473,
+    "fsize": 145,
+    "dsize": 2048
+  },
+  {
+    "id": 185,
+    "name": "gsd1_window_col_1.bin",
+    "offset": 54173696,
+    "dummy": 15550,
+    "fsize": 142,
+    "dsize": 2048
+  },
+  {
+    "id": 186,
+    "name": "gsd1_window_col_2.bin",
+    "offset": 54175744,
+    "dummy": 15055,
+    "fsize": 143,
+    "dsize": 2048
+  },
+  {
+    "id": 187,
+    "name": "gsd1_window_col_3.bin",
+    "offset": 54177792,
+    "dummy": 15374,
+    "fsize": 143,
+    "dsize": 2048
+  },
+  {
+    "id": 188,
+    "name": "gsd1_window_col_4.bin",
+    "offset": 54179840,
+    "dummy": 15614,
+    "fsize": 143,
+    "dsize": 2048
+  },
+  {
+    "id": 189,
+    "name": "gsd1_window_col_5.bin",
+    "offset": 54181888,
+    "dummy": 15138,
+    "fsize": 137,
+    "dsize": 2048
+  },
+  {
+    "id": 190,
+    "name": "gsd1_window_col_6.bin",
+    "offset": 54183936,
+    "dummy": 15334,
+    "fsize": 144,
+    "dsize": 2048
+  },
+  {
+    "id": 191,
+    "name": "gsd1_window_col_7.bin",
+    "offset": 54185984,
+    "dummy": 15263,
+    "fsize": 144,
+    "dsize": 2048
+  },
+  {
+    "id": 192,
+    "name": "war_gara.bin",
+    "offset": 54188032,
+    "dummy": 100157802,
+    "fsize": 769418,
+    "dsize": 770048
+  },
+  {
+    "id": 193,
+    "name": "war_kita.bin",
+    "offset": 54958080,
+    "dummy": 101522891,
+    "fsize": 780227,
+    "dsize": 780288
+  },
+  {
+    "id": 194,
+    "name": "war_kuwa.bin",
+    "offset": 55738368,
+    "dummy": 98411653,
+    "fsize": 756428,
+    "dsize": 757760
+  },
+  {
+    "id": 195,
+    "name": "war_last.bin",
+    "offset": 56496128,
+    "dummy": 97389766,
+    "fsize": 747165,
+    "dsize": 747520
+  },
+  {
+    "id": 196,
+    "name": "war_sca1.bin",
+    "offset": 57243648,
+    "dummy": 97952784,
+    "fsize": 753411,
+    "dsize": 753664
+  },
+  {
+    "id": 197,
+    "name": "war_sca2.bin",
+    "offset": 57997312,
+    "dummy": 98385347,
+    "fsize": 755356,
+    "dsize": 755712
+  },
+  {
+    "id": 198,
+    "name": "war_shas.bin",
+    "offset": 58753024,
+    "dummy": 98184539,
+    "fsize": 753721,
+    "dsize": 755712
+  },
+  {
+    "id": 199,
+    "name": "war_teo1.bin",
+    "offset": 59508736,
+    "dummy": 100202396,
+    "fsize": 769349,
+    "dsize": 770048
+  },
+  {
+    "id": 200,
+    "name": "war_teo2.bin",
+    "offset": 60278784,
+    "dummy": 101414328,
+    "fsize": 778710,
+    "dsize": 780288
+  },
+  {
+    "id": 201,
+    "name": "azukari.bin",
+    "offset": 61059072,
+    "dummy": 11999214,
+    "fsize": 92272,
+    "dsize": 94208
+  },
+  {
+    "id": 202,
+    "name": "bath.bin",
+    "offset": 61153280,
+    "dummy": 47581672,
+    "fsize": 363890,
+    "dsize": 364544
+  },
+  {
+    "id": 203,
+    "name": "books.bin",
+    "offset": 61517824,
+    "dummy": 19075135,
+    "fsize": 143053,
+    "dsize": 143360
+  },
+  {
+    "id": 204,
+    "name": "stone.bin",
+    "offset": 61661184,
+    "dummy": 23753979,
+    "fsize": 185087,
+    "dsize": 186368
+  },
+  {
+    "id": 205,
+    "name": "wall.bin",
+    "offset": 61847552,
+    "dummy": 15919086,
+    "fsize": 120647,
+    "dsize": 120832
+  },
+  {
+    "id": 206,
+    "name": "g1mem_000.bin",
+    "offset": 61968384,
+    "dummy": 249861,
+    "fsize": 1854,
+    "dsize": 2048
+  },
+  {
+    "id": 207,
+    "name": "g1mem_001.bin",
+    "offset": 61970432,
+    "dummy": 260209,
+    "fsize": 1903,
+    "dsize": 2048
+  },
+  {
+    "id": 208,
+    "name": "g1mem_002.bin",
+    "offset": 61972480,
+    "dummy": 322224,
+    "fsize": 2395,
+    "dsize": 4096
+  },
+  {
+    "id": 209,
+    "name": "g1mem_003.bin",
+    "offset": 61976576,
+    "dummy": 329633,
+    "fsize": 2484,
+    "dsize": 4096
+  },
+  {
+    "id": 210,
+    "name": "pan_teo.bin",
+    "offset": 61980672,
+    "dummy": 22867412,
+    "fsize": 170447,
+    "dsize": 172032
+  },
+  {
+    "id": 211,
+    "name": "shu_kwa.bin",
+    "offset": 62152704,
+    "dummy": 17749876,
+    "fsize": 136881,
+    "dsize": 137216
+  },
+  {
+    "id": 212,
+    "name": "shu_teo.bin",
+    "offset": 62289920,
+    "dummy": 23246150,
+    "fsize": 175501,
+    "dsize": 176128
+  },
+  {
+    "id": 213,
+    "name": "battle.bin",
+    "offset": 62466048,
+    "dummy": 21164696,
+    "fsize": 160551,
+    "dsize": 161792
+  },
+  {
+    "id": 214,
+    "name": "boot.bin",
+    "offset": 62627840,
+    "dummy": 37338863,
+    "fsize": 283381,
+    "dsize": 284672
+  },
+  {
+    "id": 215,
+    "name": "coin.bin",
+    "offset": 62912512,
+    "dummy": 4579704,
+    "fsize": 35350,
+    "dsize": 36864
+  },
+  {
+    "id": 216,
+    "name": "dragon.bin",
+    "offset": 62949376,
+    "dummy": 26184212,
+    "fsize": 202969,
+    "dsize": 204800
+  },
+  {
+    "id": 217,
+    "name": "gameover.bin",
+    "offset": 63154176,
+    "dummy": 22271873,
+    "fsize": 173647,
+    "dsize": 174080
+  },
+  {
+    "id": 218,
+    "name": "karuta.bin",
+    "offset": 63328256,
+    "dummy": 13239203,
+    "fsize": 100802,
+    "dsize": 102400
+  },
+  {
+    "id": 219,
+    "name": "loading.bin",
+    "offset": 63430656,
+    "dummy": 3098306,
+    "fsize": 23706,
+    "dsize": 24576
+  },
+  {
+    "id": 220,
+    "name": "melsel.bin",
+    "offset": 63455232,
+    "dummy": 5331396,
+    "fsize": 40730,
+    "dsize": 40960
+  },
+  {
+    "id": 221,
+    "name": "sdtest.bin",
+    "offset": 63496192,
+    "dummy": 42322008,
+    "fsize": 329292,
+    "dsize": 329728
+  },
+  {
+    "id": 222,
+    "name": "winsel.bin",
+    "offset": 63825920,
+    "dummy": 6250166,
+    "fsize": 46518,
+    "dsize": 47104
+  },
+  {
+    "id": 223,
+    "name": "save.bin",
+    "offset": 63873024,
+    "dummy": 45206762,
+    "fsize": 350473,
+    "dsize": 352256
+  },
+  {
+    "id": 224,
+    "name": "g1_main.bin",
+    "offset": 64225280,
+    "dummy": 68925681,
+    "fsize": 528844,
+    "dsize": 530432
+  },
+  {
+    "id": 225,
+    "name": "logo.bin",
+    "offset": 64755712,
+    "dummy": 50566657,
+    "fsize": 388784,
+    "dsize": 389120
+  },
+  {
+    "id": 226,
+    "name": "omake.bin",
+    "offset": 65144832,
+    "dummy": 179916337,
+    "fsize": 1377811,
+    "dsize": 1378304
+  }
+]

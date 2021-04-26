@@ -1,8 +1,8 @@
-package net.undeadborn.suikoden.tools.gsd2unpacker;
+package net.undeadborn.suikoden.tools;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.io.LittleEndianDataInputStream;
-import net.undeadborn.suikoden.tools.gsd2unpacker.common.Constants;
-import net.undeadborn.suikoden.tools.gsd2unpacker.model.BinFile;
+import net.undeadborn.suikoden.tools.model.BinFile;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -15,24 +15,28 @@ import java.util.stream.IntStream;
  * -- Suikoden I  --> ISO://PSP_GAME/USRDIR/bin/gsd1.bin
  * -- Suikoden II --> ISO://PSP_GAME/USRDIR/bin/gsd2.bin
  */
-public class App {
+public class GSD2Unpacker {
+
+    private final static byte[] MAGIC_NUMBER_GZIP = {(byte) 0x1F, (byte) 0x8B, (byte) 0x08};
+    private final static byte[] MAGIC_NUMBER_GSD2 = {(byte) 0x47, (byte) 0x53, (byte) 0x44, (byte) 0x32};
 
     public static void main(String[] args) throws Exception {
         if (args.length == 0) {
-            System.err.println("Should provide a GSD2 file path as argument. Exiting program.");
-            System.exit(0);
+            System.err.println("Must provide a GSD2 file path as argument. Exiting program.");
+            System.exit(1);
         }
 
-        if (!new File(args[0]).exists()) {
-            System.err.println(String.format("File [%s] does not exist.", args[0]));
-            System.exit(0);
+        if (!new File(args[0]).exists() || !new File(args[0]).isFile()) {
+            System.err.println(String.format("File [%s] is not a file or does not exist.", args[0]));
+            System.exit(1);
         }
 
         try {
-            new App().start(args[0]);
+            new GSD2Unpacker().start(args[0]);
         } catch (Exception e) {
+            System.err.println(e);
             System.err.println("Error found. Exiting program.");
-            throw e;
+            System.exit(1);
         }
     }
 
@@ -42,7 +46,7 @@ public class App {
      * @param input The path of the GSD2 file in your filesystem
      * @throws IOException error
      */
-    public void start(String input) throws IOException {
+    private void start(String input) throws IOException {
         List<BinFile> binFiles = new ArrayList<>();
         File fileInput = new File(input);
 
@@ -52,7 +56,7 @@ public class App {
         try (LittleEndianDataInputStream dis = new LittleEndianDataInputStream(new BufferedInputStream(new FileInputStream(fileInput.getAbsolutePath())))) {
             // first 4 bytes are the GSD2 file signature
             byte[] signature = dis.readNBytes(4);
-            if (!matchesSignature(signature, Constants.GSD2.SIGNATURE)) {
+            if (!matchesSignature(signature, MAGIC_NUMBER_GSD2)) {
                 throw new IOException(String.format("The file [%s] is not of GSD2 type", input));
             }
             dis.skipBytes(4); // common bytes in GSD2 files
@@ -69,15 +73,15 @@ public class App {
             // every set of byte contains information from the file (id, offset, length... etc)
             while (totalFiles > binFiles.size()) {
                 int id = dis.readInt(); // id of the file
-                int off = dis.readInt(); // offset of the file
-                int size = dis.readInt(); // size of the gz file
-                int len = dis.readInt(); // size of the file
-                dis.skipBytes(4); // variable unidentified bytes
+                int offset = dis.readInt(); // offset of the file
+                int fSize = dis.readInt(); // file size
+                int dSize = dis.readInt(); // file size in disk
+                int dummy = dis.readInt(); // variable unidentified bytes
                 dis.skipBytes(4); // common bytes in all files
                 String name = new String(dis.readNBytes(56)).trim(); // 56 bytes reserved for the file name
 
                 // we have already all data we need, so register the file info inside a list to process them later
-                BinFile file = new BinFile(name, id, off, size, len, new ArrayList<>());
+                BinFile file = new BinFile(id, name, offset, fSize, dSize, dummy, null, new ArrayList<>());
                 binFiles.add(file);
                 System.out.println(String.format("Found file #%s --> %s", String.format("%05d", file.getId()), file));
             }
@@ -93,17 +97,22 @@ public class App {
             directory.mkdir();
         }
 
+        // generate files schema
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.writeValue(new File(outputFolder + File.separator + "schema.json"), binFiles);
+
         // reopen file in RandomAccessFile to seek for offsets and extract files
         try (RandomAccessFile raf = new RandomAccessFile(fileInput.getAbsolutePath(), "r")) {
             for (int i = 0; i < binFiles.size(); i++) {
                 System.out.println(String.format("Extracting file [%s] ...", binFiles.get(i).getName()));
                 try {
                     // get the bytes from file using the offset and length
-                    byte[] arrayBytes = new byte[binFiles.get(i).getSize()];
+                    byte[] arrayBytes = new byte[binFiles.get(i).getFSize()];
                     raf.seek(Integer.valueOf(binFiles.get(i).getOffset()).longValue());
-                    raf.read(arrayBytes, 0, binFiles.get(i).getSize());
+                    raf.read(arrayBytes, 0, binFiles.get(i).getFSize());
                     // write stream into file
-                    try (FileOutputStream fos = new FileOutputStream(outputFolder + File.separator + binFiles.get(i).getName() + "." + getFileExtension(arrayBytes))) {
+                    String outputFile = outputFolder + File.separator + binFiles.get(i).getName() + "." + getFileExtension(arrayBytes);
+                    try (FileOutputStream fos = new FileOutputStream(outputFile)) {
                         fos.write(arrayBytes);
                     }
                 } catch (Exception e) {
@@ -131,8 +140,9 @@ public class App {
 
     /**
      * returns true if signature matches with the file otherwise false
+     *
      * @param arrayBytes the array bytes
-     * @param signature the file siganture to check
+     * @param signature  the file siganture to check
      * @return true if matches false otherwise
      */
     private Boolean matchesSignature(byte[] arrayBytes, byte[] signature) {
@@ -147,8 +157,8 @@ public class App {
      * @throws Exception if no file extension found
      */
     private String getFileExtension(byte[] arrayBytes) throws Exception {
-        if (matchesSignature(arrayBytes, Constants.GZIP.SIGNATURE)) {
-            return Constants.GZIP.EXTENSION;
+        if (matchesSignature(arrayBytes, MAGIC_NUMBER_GZIP)) {
+            return "gz";
         }
         throw new Exception("No file format found for the specific file");
     }
