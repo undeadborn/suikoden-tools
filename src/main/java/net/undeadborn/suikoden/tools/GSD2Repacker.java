@@ -35,7 +35,7 @@ public class GSD2Repacker {
         }
 
         if (!new File(args[1]).exists() || !new File(args[1]).isDirectory()) {
-            System.err.println(String.format("Path [%s] is not a folder or does not exist.", args[0]));
+            System.err.println(String.format("Path [%s] is not a folder or does not exist.", args[1]));
             System.exit(1);
         }
 
