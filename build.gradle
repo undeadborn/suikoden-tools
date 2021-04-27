@@ -5,14 +5,10 @@ plugins {
 }
 
 group 'net.undeadborn'
-version '1.0-SNAPSHOT'
+version '1.0'
 
 sourceCompatibility = JavaVersion.VERSION_11
 targetCompatibility = JavaVersion.VERSION_11
-
-application {
-    mainClass = 'net.undeadborn.suikoden.tools.GSD2Unpacker'
-}
 
 dependencies {
     implementation 'com.google.guava:guava:30.1.1-jre'
@@ -21,4 +17,25 @@ dependencies {
 
 repositories {
     mavenCentral()
+}
+
+task createGSD2Unpacker(type: CreateStartScripts) {
+    applicationName = 'gsd2unpacker'
+    mainClassName = 'net.undeadborn.suikoden.tools.GSD2Unpacker'
+    classpath = startScripts.classpath
+    outputDir = startScripts.outputDir
+}
+
+task createGSD2Repacker(type: CreateStartScripts) {
+    applicationName = 'gsd2repacker'
+    mainClassName = 'net.undeadborn.suikoden.tools.GSD2Repacker'
+    classpath = startScripts.classpath
+    outputDir = startScripts.outputDir
+}
+
+applicationDistribution.into('bin') {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    from(createGSD2Unpacker)
+    from(createGSD2Repacker)
+    fileMode = 0755
 }
